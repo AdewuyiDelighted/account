@@ -2,15 +2,9 @@ package account;
 
 import java.util.Scanner;
 
-public class AccountMain {
+public class AccountMainFunction {
     static BankingApp bankingApp = new BankingApp();
     static MultiThread thread = new MultiThread();
-
-    public static void main(String[] args) {
-        mainMenu();
-    }
-
-
     public static void mainMenu() {
         display();
         String userInput = input("Enter a number");
@@ -21,12 +15,12 @@ public class AccountMain {
             case "4" -> transfer();
             case "5" -> checkBalance();
             case "6" -> exit();
-            default -> display();
+            default  -> display();
         }
     }
 
 
-    private static String display() {
+    public static String display() {
         System.out.println("""
                  ==========================================
                  Welcome to OpeShort Bank                  =
@@ -42,7 +36,7 @@ public class AccountMain {
     }
 
 
-    private static void createAccount() {
+    public static void createAccount() {
         String firstname = input("Enter your Firstname");
         String secondName = input("Enter your second name");
         String password = input("Enter your password");
@@ -55,7 +49,7 @@ public class AccountMain {
 
     }
 
-    private static void deposit() {
+    public static void deposit() {
         String accountNumber = input("Enter you account number");
         int amount = Integer.parseInt(input("Enter the amount"));
         bankingApp.deposit(accountNumber, amount);
@@ -66,7 +60,7 @@ public class AccountMain {
         mainMenu();
     }
 
-    private static void withdraw() {
+    public static void withdraw() {
         String accountNumber = input("Enter your account Number");
         String password = input("Enter your password");
         int amount = Integer.parseInt(input("Enter amount"));
@@ -78,7 +72,7 @@ public class AccountMain {
         mainMenu();
     }
 
-    private static void transfer() {
+    public static void transfer() {
         String senderAccountNumber = input("Enter the account number of sender");
         String receiverAccountNumber = input("Enter the receiver account number");
         int amount = Integer.parseInt(input("Enter amount you want to transfer"));
@@ -95,7 +89,7 @@ public class AccountMain {
         mainMenu();
     }
 
-    private static void checkBalance() {
+    public static void checkBalance() {
         String accountNumber = input("Enter you account number");
         String password = input("Enter your password");
         bankingApp.checkBalance(accountNumber, password);
@@ -106,7 +100,7 @@ public class AccountMain {
         mainMenu();
     }
 
-    private static void exit() {
+    public static void exit() {
         display();
     }
 
@@ -119,7 +113,6 @@ public class AccountMain {
 
     private static void print(String message) {
         System.out.println(message);
-
     }
 }
 

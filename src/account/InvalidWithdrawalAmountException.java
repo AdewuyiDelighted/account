@@ -1,7 +1,8 @@
 package account;
 
-public class InvalidWithdrawalAmount extends RuntimeException {
-    public InvalidWithdrawalAmount(String message){
+public class InvalidWithdrawalAmountException extends RuntimeException {
+    public InvalidWithdrawalAmountException(String message){
+
         super(message);
     }
 }
